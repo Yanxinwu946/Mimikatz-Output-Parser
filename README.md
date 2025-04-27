@@ -13,25 +13,6 @@ A Python tool to parse Mimikatz output files and extract user credentials, inclu
 - Unique hash filtering for hashcat output
 - Output to stdout or file
 
-## Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/mimikatz-parser.git
-cd mimikatz-parser
-```
-2. Install dependencies (Python 3.6+ required):
-```bash
-pip install -r requirements.txt
-```
-No additional dependencies are required.
-
-## Usage
-Run the script with a Mimikatz output file:
-
-```bash
-python mimikatz_parser.py <input_file> [options]
-```
-
 ### Options
 - `-o, --output <file>`: Save output to a file (default: stdout)
 - `-f, --format <text|hashcat>`: Output format (default: text)
@@ -41,22 +22,22 @@ python mimikatz_parser.py <input_file> [options]
 ### Examples
 1. Parse a file and display a formatted table:
 ```bash
-python mimikatz_parser.py mimikatz_output.txt
+python parse_mimikatz.py mimikatz_output.txt
 ```
 
 2. Parse with colorized output:
 ```bash
-python mimikatz_parser.py mimikatz_output.txt -c
+python parse_mimikatz.py mimikatz_output.txt -c
 ```
 
 3. Output in hashcat format to a file:
 ```bash
-python mimikatz_parser.py mimikatz_output.txt -f hashcat -o hashes.txt
+python parse_mimikatz.py mimikatz_output.txt -f hashcat -o hashes.txt
 ```
 
 4. Output unique hashes only in hashcat format:
 ```bash
-python mimikatz_parser.py mimikatz_output.txt -f hashcat -u
+python parse_mimikatz.py mimikatz_output.txt -f hashcat -u
 ```
 
 ## Output Examples
@@ -105,25 +86,6 @@ This tool is intended for security researchers and penetration testers with prop
 - 支持 Hashcat 格式的唯一哈希过滤
 - 支持输出到标准输出或文件
 
-## 安装
-1. 克隆仓库：
-```bash
-git clone https://github.com/yourusername/mimikatz-parser.git
-cd mimikatz-parser
-```
-2. 安装依赖（需要 Python 3.6+）：
-```bash
-pip install -r requirements.txt
-```
-无需额外依赖。
-
-## 使用方法
-使用 Mimikatz 输出文件运行脚本：
-
-```bash
-python mimikatz_parser.py <输入文件> [选项]
-```
-
 ### 选项
 - `-o, --output <文件>`：将输出保存到文件（默认：标准输出）
 - `-f, --format <text|hashcat>`：输出格式（默认：text）
@@ -133,22 +95,22 @@ python mimikatz_parser.py <输入文件> [选项]
 ### 示例
 1. 解析文件并显示格式化表格：
 ```bash
-python mimikatz_parser.py mimikatz_output.txt
+python parse_mimikatz.py mimikatz_output.txt
 ```
 
 2. 使用彩色输出解析：
 ```bash
-python mimikatz_parser.py mimikatz_output.txt -c
+python parse_mimikatz.py mimikatz_output.txt -c
 ```
 
 3. 以 hashcat 格式输出到文件：
 ```bash
-python mimikatz_parser.py mimikatz_output.txt -f hashcat -o hashes.txt
+python parse_mimikatz.py mimikatz_output.txt -f hashcat -o hashes.txt
 ```
 
 4. 仅输出 hashcat 格式的唯一哈希：
 ```bash
-python mimikatz_parser.py mimikatz_output.txt -f hashcat -u
+python parse_mimikatz.py mimikatz_output.txt -f hashcat -u
 ```
 
 ## 输出示例
@@ -168,7 +130,7 @@ aad3b435b51404eeaad3b435b51404ee:CORP\jdoe
 
 ## 贡献
 欢迎贡献！请按照以下步骤操作：
-1. 叉取仓库
+1. fork仓库
 2. 创建功能分支（`git checkout -b feature/your-feature`）
 3. 提交更改（`git commit -am 'Add your feature'`）
 4. 推送分支（`git push origin feature/your-feature`）
@@ -179,4 +141,3 @@ aad3b435b51404eeaad3b435b51404ee:CORP\jdoe
 
 ## 免责声明
 此工具仅限具有适当授权的安全研究人员和渗透测试人员使用。请负责任地使用，仅在您有权限测试的系统上使用。作者对任何滥用或由此工具造成的损害不承担责任。
-
